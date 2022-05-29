@@ -26,6 +26,11 @@
   }
 }
 
+.fake-reaction {
+  position: absolute;
+  left: 13px !important;
+}
+
 .discourse-reactions-reaction-button {
   overflow-y: hidden;
 }
