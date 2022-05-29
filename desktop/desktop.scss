@@ -2,7 +2,9 @@
 
 .discourse-reactions-list .reactions .user-list .container {
   .heading {
-    display: none;
+    @if $hide-user-list-heading == "true" {
+      display: none;
+    }
   }
   .username {
     padding: 0.25em;
