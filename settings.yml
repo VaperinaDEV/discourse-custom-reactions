@@ -14,6 +14,10 @@ user_list_rounding:
   default: "0.5em"
   type: "string"
   description: "Reactions User list (border-radius) corners rounding. You can use px, em, etc"
+hide_user_list_heading:
+  default: false
+  type: "bool"
+  description: "Hide user list heading" 
 hide_user_list:
   default: false
   type: "bool"
