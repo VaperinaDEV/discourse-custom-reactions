@@ -1,0 +1,101 @@
+@import "str-to-list";
+
+$list: str-to-list("#{$reactions_label}", "|");
+$nested-list: ();
+@each $item in $list {
+  $item: str-to-list("#{$item}", ";");
+  $nested-list: append($nested-list, $item);
+}
+
+// Reactions
+
+.discourse-reactions-picker {
+  .discourse-reactions-picker-container {
+    border: 1px solid var(--primary-low) !important;
+    padding: 0.25em;
+    grid-gap: 0.5em;
+    border-radius: #{$reactions_picker_rounding};
+    .pickable-reaction {
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }  
+    &.col-7,
+    &.col-8 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  .pickable-reaction {
+     background: transparent !important;
+    .emoji {
+      height: 40px;
+      width: 40px;
+      aspect-ratio: auto 40 / 40;
+      margin-left: 0 !important;
+      padding: 0 !important;
+      transform: scale(0.8);
+    }
+    &.is-used {
+      transform: scale(1.3);
+      transform-origin: center;
+      .discourse-no-touch & {
+        transform-origin: bottom;
+      }
+      border: none !important;
+    }
+    &:hover {
+      z-index: 2;
+      transform: scale(1.3) !important;
+      transform-origin: center;
+      .discourse-no-touch & {
+        transform-origin: bottom;
+      }
+    }
+    &:hover:after {
+      position: absolute;
+      width: max-content;
+      top: -20px;
+      font-size: 10px;
+      background: var(--secondary-low);
+      color: var(--secondary);
+      padding: 2px 5px;
+      border-radius: 20px;
+    }
+    @each $data-reaction, $label in $nested-list {
+      &[data-reaction="#{$data-reaction}"] {
+        &:hover:after {
+          content: $label;
+        }
+      }
+    }
+  }
+}
+
+.discourse-reactions-state-panel {
+  .container {
+    padding: 0.5em !important;
+    width: auto !important;
+    border-radius: #{$state_panel_rounding};
+  }
+}
+
+.discourse-reactions-list .reactions .user-list {
+  @if $hide-user-list == "true" {
+    display: none;
+  }
+  .container {
+    min-height: 0;
+    border-radius: #{$user_list_rounding};
+  }
+}
+
+.discourse-reactions-state-panel-reaction .show-users {
+  justify-content: center;
+  align-self: center;
+}
+
+@if $hide-who-liked == "true" {
+  .who-liked {
+    display: none;
+  }
+}

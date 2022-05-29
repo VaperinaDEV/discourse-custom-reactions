@@ -1,0 +1,27 @@
+// Reactions
+
+.discourse-reactions-picker {
+  position: fixed;
+  .pickable-reaction {
+    &:hover:after {
+      font-size: 12px;
+    }
+    &.is-used {
+      &:hover:after {
+        transform: scale(0.8);
+        top: -15px;
+      }
+    }
+  }
+}
+
+.discourse-reactions-state-panel {
+  position: fixed;
+}
+
+.discourse-reactions-state-panel-reaction {
+  .reaction-wrapper,
+  .reaction-wrapper:first-child {
+    margin-left: unset !important;
+  }
+}

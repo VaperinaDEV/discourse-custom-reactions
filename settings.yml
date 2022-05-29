@@ -1,0 +1,24 @@
+reactions_label:
+  default: heart;Love it!|+1;Thumbs Up|laughing;Funny|open_mouth;Ooo...|clap;Congrats
+  type: "list"
+  description: "Semicolon delimited in this order: reaction name;reaction label"
+reactions_picker_rounding:
+  default: "1em"
+  type: "string"
+  description: "Reactions picker (border-radius) corners rounding. You can use px, em, etc"
+state_panel_rounding:
+  default: "0.5em"
+  type: "string"
+  description: "Reactions State Panel (border-radius) corners rounding. You can use px, em, etc"
+user_list_rounding:
+  default: "0.5em"
+  type: "string"
+  description: "Reactions User list (border-radius) corners rounding. You can use px, em, etc"
+hide_user_list:
+  default: false
+  type: "bool"
+  description: "Hide user list"  
+hide_who_liked:
+  default: false
+  type: "bool"
+  description: "Hide the default who liked section"
