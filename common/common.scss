@@ -27,7 +27,7 @@ $nested-list: ();
   }
   .pickable-reaction {
     background: transparent !important;
-    transition: transform 0.25s;
+    transition: all 0.25s;
     .emoji {
       height: 40px;
       width: 40px;
