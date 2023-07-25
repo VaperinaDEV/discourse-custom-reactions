@@ -26,7 +26,8 @@ $nested-list: ();
     }
   }
   .pickable-reaction {
-     background: transparent !important;
+    background: transparent !important;
+    transition: transform 0.25s;
     .emoji {
       height: 40px;
       width: 40px;
@@ -37,7 +38,9 @@ $nested-list: ();
     }
     &.is-used {
       transform: scale(1.3);
-      transform-origin: center;
+      .discourse-touch & {
+        transform-origin: center;
+      }
       .discourse-no-touch & {
         transform-origin: bottom;
       }
@@ -46,7 +49,9 @@ $nested-list: ();
     &:hover {
       z-index: 2;
       transform: scale(1.3) !important;
-      transform-origin: center;
+      .discourse-touch & {
+        transform-origin: center;
+      }
       .discourse-no-touch & {
         transform-origin: bottom;
       }
